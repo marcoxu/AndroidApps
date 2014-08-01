@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <item format="integer" name="gridview_columns" type="integer">2</item>
+    <item format="integer" name="imageview_width" type="integer">150</item>
+    <item format="integer" name="imageview_height" type="integer">150</item>
+
+</resources>

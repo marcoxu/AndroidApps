@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout
+    android:id="@+id/layout_top"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <Spinner    
+            android:id="@+id/spinner_adaptertype"
+            android:layout_alignParentLeft="true"  
+            android:layout_width="120dp"
+            android:layout_height="40sp"
+            android:layout_alignParentTop="true">    
+    </Spinner>
+	<Spinner    
+            android:id="@+id/spinner_asnyctype"    
+            android:layout_toRightOf="@id/spinner_adaptertype"
+            android:layout_width="120dp"
+            android:layout_height="40sp"
+            android:layout_alignParentTop="true"
+        	android:layout_marginLeft="5dp">    
+    </Spinner>
+    <Button 
+            android:id="@+id/btnStartLoad"
+            android:layout_width="80dp"
+            android:layout_height="40sp"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:background="#006ED4"
+            android:textColor="#ffffff"
+            android:text="@string/StartLoad" />
+</RelativeLayout>
+<GridView
+    android:id="@+id/gridview"
+    android:layout_below="@id/layout_top"
+    android:layout_width="fill_parent"
+    android:numColumns="auto_fit"
+    android:gravity="center"
+    android:background="#555555"
+    android:layout_height="fill_parent">
+</GridView>
+</RelativeLayout>
