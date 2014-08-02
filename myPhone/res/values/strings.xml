@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, PhoneManagerActivity!</string>
+    <string name="app_name">来电通</string>
+    <string name="recommendation">精品推荐</string>
+    <string name="wirelessOA">OA</string>
+    <string name="contactor">联系人</string>
+    <string name="history">通话记录</string>
+    <string name="dialPad">拨号</string>
+    <string name="calling_via_template">Calling via ^1\n<b>^2</b></string>
+    <string name="search">搜索</string>
+    <string name="location">location</string>
+    <string name="calllog_location">归属地: </string>
+    <string name="calllog_type">类   型: </string>
+    <string name="calllog_company">公   司: </string>
+    <string name="calllog_department">部   门: </string>
+    <string name="calllog_position">职   位: </string>
+    <string name="blacklist">黑名单</string>
+    <string name="button_ok">确定</string>
+    <string name="button_cancel">取消</string>
+    <string name="button_add">添加</string>
+    
+</resources>

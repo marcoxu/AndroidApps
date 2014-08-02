@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.snda.myPhone"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="7" />
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.STATUS_BAR" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.BROADCAST_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" /> 
+    
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <receiver android:enabled="true" android:name=".bootUpReceiver"    
+              android:permission="android.permission.RECEIVE_BOOT_COMPLETED">    
+              <intent-filter>    
+                  <action android:name="android.intent.action.BOOT_COMPLETED" />    
+                  <category android:name="android.intent.category.DEFAULT" />    
+              </intent-filter>    
+        </receiver>    
+        <service android:name=".myPhoneService"
+            android:label="myPhoneService"
+            android:icon="@drawable/icon"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+        </service>
+        <activity android:name="mainLogin" 
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            </activity>
+        <activity android:name="myPhoneActivity" 
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask"/>
+        <activity android:name="onCallReceived" 
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask"/>
+        <activity android:name="callLogs" 
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask"/>
+        <activity android:name="blacklistManager" 
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask"/>
+        <activity android:name="blacklistEditor" 
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask"/>
+        <activity android:name="com.snda.recommend.ui.AppListActivity" 
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask"/>
+        <activity android:name="com.snda.recommend.ui.AppDetailActivity" 
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask"/>
+        <activity android:name="com.snda.recommend.ui.DownloadActivity" 
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait" 
+            android:launchMode="singleTask"/>
+        </application>
+</manifest>

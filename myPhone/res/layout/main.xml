@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:background="#88ffffff"
+        android:layout_height="wrap_content">        
+        <Button 
+            android:id="@+id/snda_recommend"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/recommendation" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">        
+        <Button 
+            android:id="@+id/historyList"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/history" />
+        <Button 
+            android:id="@+id/contactors"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/contactor" />
+        <Button 
+            android:id="@+id/blacklist"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/blacklist" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/tabLayout"
+            android:layout_width="fill_parent" 
+            android:layout_height="fill_parent">
+    </LinearLayout>
+</LinearLayout>

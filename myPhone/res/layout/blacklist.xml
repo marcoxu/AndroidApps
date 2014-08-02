@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:id="@+id/blacklistlayout"
+    android:orientation="vertical"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent" >  
+    <Button  
+           android:id="@+id/blackListAdd"  
+           android:layout_width="fill_parent"  
+           android:layout_height="wrap_content"  
+           android:layout_alignParentRight="true"
+           android:text="添加黑名单" />  
+    <ListView android:layout_width="wrap_content"    
+              android:layout_height="fill_parent"    
+              android:layout_below="@+id/blackListAdd"    
+              android:id="@+id/blackListShow" />  
+</RelativeLayout> 
