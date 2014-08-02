@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout    
+    android:id="@+id/rte_history_item_layout"    
+    android:layout_width="fill_parent"    
+    xmlns:android="http://schemas.android.com/apk/res/android"    
+    android:layout_height="wrap_content">  
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rte_history_item_sms_layout"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true" >
+  
+<TextView    
+    android:text=""    
+    android:layout_height="wrap_content"    
+    android:textSize="15sp"
+    android:layout_marginTop="5dp"
+    android:textColor="#2F4F4F"
+    android:layout_width="wrap_content"    
+    android:layout_marginLeft="5dp" 
+    android:id="@+id/to_number"  
+    />  
+<TextView    
+    android:text=""    
+    android:textSize="15sp"
+    android:layout_height="wrap_content"    
+    android:layout_width="wrap_content"    
+    android:layout_below="@+id/to_number"    
+    android:layout_marginLeft="5dp" 
+    android:id="@+id/from_number"/>
+
+<TextView
+    android:id="@+id/sms_content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/to_number"
+    android:layout_toLeftOf="@+id/blacklist_check"
+    android:layout_toRightOf="@+id/from_number"
+    android:text=""
+    android:textColor="#A9A9A9"
+    android:textSize="14sp" />
+
+<TextView
+    android:id="@+id/sms_date"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/sms_content"
+    android:layout_marginLeft="16dp"
+    android:layout_toRightOf="@+id/to_number"
+    android:text=""
+    android:textSize="15sp" />
+</RelativeLayout>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rte_history_item_chkbox_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+  
+<CheckBox
+    android:id="@+id/blacklist_check"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_gravity="top"
+    android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+    android:clickable="true"
+    android:focusable="false"
+    android:focusableInTouchMode="false" />
+
+</RelativeLayout>
+
+</RelativeLayout>

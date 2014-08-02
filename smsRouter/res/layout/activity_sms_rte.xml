@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#D3D3D3"
+    tools:context=".SmsRteActivity" >
+
+    <RelativeLayout
+        android:id="@+id/disp_items_relativelayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:background="#D3D3D3"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+    
+		<TextView
+		    android:id="@+id/service_name"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+		    android:layout_centerVertical="true"
+		    android:gravity="center_vertical"
+		    android:text="短信转发服务"
+		    android:textColor="#000000"
+		    android:textSize="15dip" />
+
+		<ImageButton
+        	android:id="@+id/smsServStatus"  
+			android:layout_alignParentRight="true"
+			android:background="#D3D3D3"			
+       	 	android:layout_width="wrap_content"  
+       	 	android:layout_height="wrap_content" /> 
+
+	</RelativeLayout>    
+
+</RelativeLayout>

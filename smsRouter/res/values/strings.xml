@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">短信转发器</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="desc_name">短信转发服务</string>
+    <string name="config_page_key">短信转发</string>
+    <string name="config_title">转发服务</string>
+    <string name="config_about_key">关于</string>
+    <string name="config_about_summary">短信转发服务</string>
+    <string name="config_email_key">config_email_key</string>
+    <string name="config_email_summary">config_email_summary</string>
+    <string name="config_about_string">开发者：Xu, Marco \n\n该应用程序可将短信自动转发到用户指定号码。\n\n当前版本：v1.0</string>
+    <string name="config_app_key">短信转发</string>
+    <string name="sms_rte_history">sms_rte_history</string>
+    <string name="sms_rte_history_title">转发历史记录</string>
+    <string name="sms_rte_history_summary">显示短信转发历史记录</string>
+    <string name="rteHistoryTitle">转发记录</string>
+    <string name="del_history_confirm">确认删除？</string>
+    <string name="sms_rte_rule_title">转发规则设置</string>
+    <string name="sms_rte_rule_summary">全部转发</string>
+    <string name="sms_rte_rule">转发规则</string>
+    <string name="sms_rte_flow_ctrl">转发流量控制</string>
+    <string name="sms_rte_flow_ctrl_title">转发流量监控</string>
+    <string name="sms_rte_flow_ctrl_summary">设置短信转发量信息</string>
+    <string name="config_flow_control_key">config_flow_control_key</string>
+    <string name="config_flow_control_title">转发流量监控</string>
+    <string name="config_flow_control_summary">短信转发流量按时间监控管理</string>
+    <string name="flow_control_config_page">流量监控配置</string>
+    <string name="flow_control_disp_count_key">已转发短信流量</string>
+    <string name="flow_control_config_key">flow_control_config_key</string>
+    <string name="flow_control_config_desc">"流量控制规则配置"</string>
+    <string name="flow_control_config_name">&quot;流量控制规则配置&quot;</string>
+    <string name="flow_control_interval">周 期</string>
+    <string name="flow_control_threshold">额 度</string>
+    <string name="config_flow_control">转发额度配置</string>
+    <string name="flow_control_disp_count_info">目前已转发0条</string>
+    <string name="flow_control_enabled">流量控制已配置</string>
+    <string name="flow_control_disabled">流量控制未配置</string>
+    <string name="config_forward_rule_key">转发规则配置</string>
+    <string name="config_forward_rule_title">短信转发规则配置</string>
+    <string name="config_forward_rule_on_summary">转发规则已配置</string>
+    <string name="config_forward_rule_off_summary">转发规则未配置</string>
+    <string name="forward_rule_blacklist_key">黑名单</string>
+    <string name="forward_rule_blacklist_summary">不转发来自黑名单中的号码的短信</string>
+    <string name="forward_rule_whitelist_key">白名单</string>
+    <string name="forward_rule_whitelist_summary">只转发来自白名单中的号码的短信</string>
+    <string name="forward_rule_config_page">转发规则配置页</string>
+    
+</resources>

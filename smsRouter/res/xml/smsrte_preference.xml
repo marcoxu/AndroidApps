@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" android:title="@string/config_page_key" android:key="@string/config_page_key" android:summary="@string/config_title">
+    <PreferenceCategory android:title="@string/config_title" android:key="@string/config_title">
+     <com.marco.smsrouter.preference.SmsServiceTogglePreference
+      android:key="sms_router_key"
+      android:dialogIcon="@drawable/ic_launcher"
+      android:title="@string/config_app_key"
+      android:dialogTitle="@string/app_name"
+      android:summary="@string/config_about_summary"
+      android:widgetLayout="@layout/toggle_preference"
+      android:negativeButtonText="@null" />
+     <PreferenceScreen
+        android:key="@string/sms_rte_history"
+        android:title="@string/sms_rte_history_title"
+        android:summary="@string/sms_rte_history_summary" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.marco.smsrouter"
+            android:targetClass="com.marco.smsrouter.smsRteHistoryActivity" />
+    </PreferenceScreen>
+     <PreferenceScreen
+        android:key="@string/sms_rte_rule"
+        android:title="@string/sms_rte_rule_title"
+        android:summary="@string/sms_rte_rule_summary" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.marco.smsrouter"
+            android:targetClass="com.marco.smsrouter.ForwardRuleActivity" />
+    </PreferenceScreen>
+     <PreferenceScreen
+        android:key="@string/sms_rte_flow_ctrl"
+        android:title="@string/sms_rte_flow_ctrl_title"
+        android:summary="@string/sms_rte_flow_ctrl_summary" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.marco.smsrouter"
+            android:targetClass="com.marco.smsrouter.FlowControlActivity" />
+    </PreferenceScreen>
+     <com.marco.smsrouter.preference.DialogPreference
+      android:key="smsForwarder"
+      android:dialogIcon="@drawable/ic_launcher"
+      android:title="@string/config_about_key"
+      android:dialogTitle="@string/app_name"
+      android:negativeButtonText="@null" />
+     
+</PreferenceCategory>
+    
+</PreferenceScreen>
+
+

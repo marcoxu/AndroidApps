@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/flow_control_config_page" android:key="@string/config_title">
+     <com.marco.smsrouter.preference.SmsFlowControlTogglePreference
+      android:key="@string/config_flow_control_key"
+      android:dialogIcon="@drawable/ic_launcher"
+      android:dialogTitle="@string/flow_control_config_page"
+      android:title="@string/config_flow_control_title"
+      android:summary="@string/config_flow_control_summary"
+      android:widgetLayout="@layout/toggle_preference"
+      android:negativeButtonText="@null" />
+     <com.marco.smsrouter.preference.BaseTextDisplayPreference
+      android:key="@string/flow_control_config_key"
+      android:title="@string/config_app_key"
+      android:summary="@string/config_about_summary"
+      android:widgetLayout="@layout/toggle_preference"
+      android:negativeButtonText="@null" />
+     <com.marco.smsrouter.preference.BaseTextDisplayPreference
+      android:key="@string/flow_control_disp_count_key"
+      android:title="@string/config_app_key"
+      android:summary="@string/config_about_summary"
+      android:widgetLayout="@layout/toggle_preference"
+      android:negativeButtonText="@null" />
+    </PreferenceCategory>
+</PreferenceScreen>
+
+

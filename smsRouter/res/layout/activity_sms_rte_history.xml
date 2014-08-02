@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:id="@+id/rteHistorylistlayout"
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent" 
+    android:background="#D3D3D3">
+    <RelativeLayout
+             android:id="@+id/disp_title_relativelayout"  
+             android:layout_width="fill_parent" 
+             android:layout_height="50dip"
+             android:layout_alignParentTop="true"
+             android:layout_centerInParent="true"
+             android:gravity="center_horizontal" 
+             android:background="#0C9ABA">
+    <TextView
+        android:id="@+id/rteHistoryListTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="@string/rteHistoryTitle"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+   </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/select_all_relativelayout"  
+        android:layout_width="wrap_content" 
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_horizontal" 
+        android:layout_marginLeft="5dp"
+        android:background="#0C9ABA">
+
+    <Button
+        android:id="@+id/btnselall"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btn_bg"
+        android:text="全选"
+        android:textSize="16sp"
+        android:textColor="#ffffff" />
+    
+   </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/delete_relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#0C9ABA"
+        android:gravity="center_horizontal" >
+
+    <Button
+        android:id="@+id/btndel"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btn_bg"
+        android:text="删除"
+        android:textSize="16sp"
+        android:layout_marginRight="5dp"
+        android:textColor="#ffffff" />
+    
+   </RelativeLayout>
+   <RelativeLayout
+        android:id="@+id/disp_items_relativelayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disp_title_relativelayout"
+        android:layout_marginTop="5sp"
+        android:background="#D3D3D3"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+    <ListView android:layout_width="wrap_content"    
+        android:layout_height="wrap_content"    
+        android:background="#ffffff"
+        android:id="@+id/rteHistoryList" />
+
+    </RelativeLayout>
+    
+</RelativeLayout> 
