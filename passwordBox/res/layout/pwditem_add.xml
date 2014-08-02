@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#D3D3D3">
+    <RelativeLayout
+             android:id="@+id/disp_title_relativelayout"  
+             android:layout_width="fill_parent" 
+             android:layout_height="50dip"
+             android:layout_alignParentTop="true"
+             android:gravity="center_horizontal" 
+             android:background="#0C9ABA"> 
+             <TextView
+                 android:id="@+id/btnreturn"
+                 android:layout_width="100dp"
+                 android:layout_height="wrap_content"
+        		 android:layout_alignParentLeft="true" 
+       		     android:layout_centerVertical="true" 
+       		     android:textColor="#ffffff"
+        		 android:layout_marginLeft="1dp" />
+             <Button
+                 android:id="@+id/btnok"
+                 android:layout_width="100dp"
+                 android:layout_height="wrap_content"
+        		 android:layout_alignParentRight="true" 
+       		     android:layout_centerVertical="true" 
+       		     android:background="@drawable/btn_bg"
+       		     android:text="保存"
+       		     android:textColor="#ffffff"
+        		 android:layout_marginRight="1dp" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_centerVertical="true"
+                 android:gravity="center"
+                 android:text="@string/add_title"
+                 android:textColor="#ffffff"
+                 android:textSize="20dip" />
+ 
+             </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/disp_items_relativelayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disp_title_relativelayout"
+        android:layout_marginTop="5sp"
+        android:background="#D3D3D3"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+	    <TextView
+	        android:id="@+id/text_category"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/spinner_category"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="2dip"
+	        android:gravity="center_vertical"
+	        android:text="@string/category_name"
+	        android:textColor="#000000"
+	        android:textSize="15dip" />
+		<Spinner    
+            android:id="@+id/spinner_category"    
+            android:layout_toRightOf="@id/text_category"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+        	android:layout_marginLeft="11dip">    
+        </Spinner>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/disp_items_relativelayout2"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="5sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disp_items_relativelayout1"
+        android:background="#D3D3D3"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+	    <TextView
+	        android:id="@+id/text_desc"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/input_account"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="2dip"
+	        android:gravity="center_vertical"
+	        android:text="@string/desc_name"
+	        android:textColor="#000000"
+	        android:textSize="15dip" />
+    
+		<EditText
+                android:id="@+id/input_desc"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dip"
+                android:hint="请输入备注"
+                android:singleLine="true" 
+        	    android:layout_marginLeft="50dip"
+                android:layout_gravity="center"
+                android:gravity="center_vertical">
+        </EditText>
+    </RelativeLayout>  
+    
+    <RelativeLayout
+        android:id="@+id/disp_items_relativelayout3"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="5sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disp_items_relativelayout2"
+        android:background="#D3D3D3"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+	    <TextView
+	        android:id="@+id/text_account"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/input_account"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="2dip"
+	        android:gravity="center_vertical"
+	        android:text="@string/account_name"
+	        android:textColor="#000000"
+	        android:textSize="15dip" />
+    
+		<EditText
+                android:id="@+id/input_account"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dip"
+                android:hint="请输入账号"
+                android:singleLine="true" 
+        	    android:layout_marginLeft="50dip"
+                android:layout_gravity="center"
+                android:gravity="center_vertical">
+        </EditText>
+    </RelativeLayout>  
+    
+    <RelativeLayout
+        android:id="@+id/disp_items_relativelayout4"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="5sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disp_items_relativelayout3"
+        android:background="#D3D3D3"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+	    <TextView
+	        android:id="@+id/text_hint"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/input_hint"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="2dip"
+	        android:gravity="center_vertical"
+	        android:text="@string/hint_name"
+	        android:textColor="#000000"
+	        android:textSize="15dip" />
+    
+		<EditText
+                android:id="@+id/input_hint"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dip"
+                android:hint="请输入提示信息"
+                android:singleLine="true" 
+        	    android:layout_marginLeft="50dip"
+                android:layout_gravity="center"
+                android:gravity="center_vertical">
+        </EditText>
+    </RelativeLayout>        
+    
+    <RelativeLayout
+        android:id="@+id/disp_items_relativelayout5"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="5sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disp_items_relativelayout4"
+        android:background="#D3D3D3"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+	    <TextView
+	        android:id="@+id/text_pwd"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/input_pwd"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="2dip"
+	        android:gravity="center_vertical"
+	        android:text="@string/pwd_name"
+	        android:textColor="#000000"
+	        android:textSize="15dip" />
+    
+		<EditText
+                android:id="@+id/input_pwd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dip"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:singleLine="true" 
+        	    android:layout_marginLeft="50dip"
+                android:layout_gravity="center"
+                android:gravity="center_vertical">
+        </EditText>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/disp_items_relativelayout6"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="5sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disp_items_relativelayout5"
+        android:background="#D3D3D3"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+	    <TextView
+	        android:id="@+id/text_pwd_repeat"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/input_pwd_repeat"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="2dip"
+	        android:gravity="center_vertical"
+	        android:text="@string/pwd_name"
+	        android:textColor="#000000"
+	        android:textSize="15dip" />
+    
+		<EditText
+                android:id="@+id/input_pwd_repeat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dip"
+                android:hint="请确认密码"
+                android:inputType="textPassword"
+                android:singleLine="true" 
+        	    android:layout_marginLeft="50dip"
+                android:layout_gravity="center"
+                android:gravity="center_vertical">
+        </EditText>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/disp_items_relativelayout7"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="5sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/disp_items_relativelayout6"
+        android:background="#D3D3D3"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+	    <TextView
+	        android:id="@+id/text_encrymod"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/spinner_encrymod"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="2dip"
+	        android:gravity="center_vertical"
+	        android:text="@string/encrymod_name"
+	        android:textColor="#000000"
+	        android:textSize="15dip" />
+
+        <Spinner
+            android:id="@+id/spinner_encrymod"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+        	android:layout_marginLeft="11dip"
+            android:layout_toRightOf="@+id/text_encrymod"
+            android:textSize="15dip" />
+    </RelativeLayout>
+        
+    <RelativeLayout
+        android:id="@+id/disp_items_relativelayout8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5sp"
+        android:layout_below="@+id/disp_items_relativelayout7"
+        android:background="#D3D3D3"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+	    <TextView
+	        android:id="@+id/text_dispmod"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/spinner_dispmod"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="2dip"
+	        android:gravity="center_vertical"
+	        android:text="@string/dispmod_name"
+	        android:textColor="#000000"
+	        android:textSize="15dip" />
+
+        <Spinner
+            android:id="@+id/spinner_dispmod"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+        	android:layout_marginLeft="11dip"
+            android:layout_toRightOf="@+id/text_dispmod"
+            android:textSize="15dip" />
+
+    </RelativeLayout>
+</RelativeLayout> 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" > 
+    <ImageView 
+        android:id="@+id/buddy_listview_child_avatar" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentLeft="true" 
+        android:gravity="center"
+        android:layout_marginLeft="10dp" /> 
+    <TextView 
+        android:id="@+id/buddy_listview_child_nick" 
+        android:layout_width="wrap_content" 
+        android:layout_height="50sp" 
+        android:gravity="center"
+        android:layout_toRightOf="@+id/buddy_listview_child_avatar" 
+        android:text="昵称" 
+        android:textColor="#424952"
+        android:textSize="16sp" /> 
+    <TextView 
+        android:id="@+id/buddy_listview_child_trends" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignLeft="@+id/buddy_listview_child_nick" 
+        android:gravity="center"
+        android:textColor="#424952"
+        android:layout_alignParentBottom="true" 
+        android:textSize="12sp" />  
+</RelativeLayout> 

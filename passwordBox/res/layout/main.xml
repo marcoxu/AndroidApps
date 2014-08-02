@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/main_page3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+             android:id="@+id/main_relativelayout"  
+             android:orientation="vertical" 
+             android:layout_width="fill_parent" 
+             android:layout_height="80dp"
+             android:layout_alignParentBottom="true"
+             android:background="#444445">
+        <Button 
+            android:id="@+id/btnRegister"
+            android:layout_width="100dp"
+            android:layout_height="40sp"
+            android:gravity="center"
+            android:textSize="15dip"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop = "20dp"
+            android:layout_marginLeft = "40dp"
+            android:background="#006ED4"
+            android:textColor="#ffffff"
+            android:text="@string/register" />
+        <Button 
+            android:id="@+id/btnFastLogin"
+            android:layout_width="100dp"
+            android:layout_height="40sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop = "20dp"
+            android:textSize="15dip"
+            android:gravity="center"
+            android:background="#C0C6D1"
+            android:layout_marginRight = "40dp"
+            android:textColor="#4C5C7D"
+            android:text="@string/login" />
+    </RelativeLayout>
+   
+</RelativeLayout> 

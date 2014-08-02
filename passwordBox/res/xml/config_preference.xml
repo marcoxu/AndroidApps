@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" android:title="@string/config_page_key" android:key="@string/config_page_key" android:summary="@string/config_title">
+         <marco.Android.PwdBox.DialogPreference
+      android:key="@string/config_about_key"
+      android:dialogIcon="@drawable/pwd_icon"
+      android:title="@string/config_about_key"
+      android:dialogTitle="@string/app_name"
+      android:summary="@string/config_about_summary"
+      android:negativeButtonText="@null" />
+    <PreferenceCategory android:title="@string/configure_title" android:key="@string/configure_title">
+     <marco.Android.PwdBox.DialogPreference
+      android:key="@string/config_about_key"
+      android:dialogIcon="@drawable/pwd_icon"
+      android:title="@string/config_about_key"
+      android:dialogTitle="@string/app_name"
+      android:summary="@string/config_about_summary"
+      android:negativeButtonText="@null" />
+     <marco.Android.PwdBox.DialogPreference
+      android:key="@string/config_email_key"
+      android:dialogIcon="@drawable/pwd_icon"
+      android:title="@string/config_email_key"
+      android:dialogTitle="@string/app_name"
+      android:summary="@string/config_email_summary"
+      android:negativeButtonText="@null" /></PreferenceCategory>
+    
+</PreferenceScreen>
+
+

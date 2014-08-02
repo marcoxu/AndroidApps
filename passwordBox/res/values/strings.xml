@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">密码宝盒</string>
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+    <string name="mainTitle">密码宝盒</string>
+    <string name="disp_title">所有记录</string>
+    <string name="displayList">全部</string>
+    <string name="addItem">添加</string>
+    <string name="configure">设置</string>
+    <string name="add_title">新记录</string>
+    <string name="category_name">分组</string>
+    <string name="desc_name">备注</string>
+    <string name="account_name">账号</string>
+    <string name="hint_name">提示</string>
+    <string name="pwd_name">密码</string>
+    <string name="encrymod_name">加密</string>
+    <string name="dispmod_name">显示</string>
+    <string name="configure_title">宝盒设置</string>
+    <string name="config_about_key">关于</string>
+    <string name="config_about_string">开发者：Xu, Marco \n\n密码宝盒是一款简单的应用程序，用于保存和管理您在各种网站，邮件，应用等的注册账号及密码。\n\n当前版本：v1.0</string>
+    <string name="config_about_summary">关于密码宝盒</string>
+    <string name="conf_title">设置</string>
+    <string name="config_title">设置</string>
+    <string name="config_page_key">密码宝盒设置</string>
+    <string name="config_email_string">此功能将发送所有密码的拷贝到指定邮箱。如您确认执行此操作，请填写邮箱地址并按“是”进行发送。</string>
+    <string name="config_email_key">发送E-mail</string>
+    <string name="config_email_summary">通过E-mail发送所有密码拷贝到指定邮箱</string>
+</resources>
