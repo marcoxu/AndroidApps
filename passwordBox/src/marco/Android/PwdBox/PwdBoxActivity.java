@@ -5,13 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.baidu.api.Baidu;
-import com.baidu.api.BaiduDialogError;
-import com.baidu.api.BaiduException;
-import com.baidu.api.BaiduDialog.BaiduDialogListener;
-import com.snda.woa.android.CallBack;
-import com.snda.woa.android.OpenAPI;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.TabActivity;
@@ -36,21 +30,21 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+@SuppressLint("HandlerLeak")
 public class PwdBoxActivity extends Activity {
     private static final String TAG = "marco.Android.PwdBox";
     private static final String AppId = "909";
+    private static loginEnventHandler eventHandler = null;
+    private String clientId = "0trswTLaGB6hN820M30Brbhx";
+    private String clientSecret = "EAm5zdHvGkQiD4E8tbu7Tqrk8Esrfy90";
+
     public static String SessionId = null;
     public static String UserId = null;
     public static String DeviceId = null;
-    private static loginEnventHandler eventHandler = null;
     public static boolean skip_auth = true;
+    public static final int EVENT_LOGIN_DONE = 0;
 
-	public static final int EVENT_LOGIN_DONE   = 0;
-    private String clientId = "0trswTLaGB6hN820M30Brbhx";
-
-    private String clientSecret = "EAm5zdHvGkQiD4E8tbu7Tqrk8Esrfy90";
-
-    private Baidu baidu = null;
+    //private Baidu baidu = null;
 
     private void startSndaLogin(){
     	try {
@@ -103,27 +97,32 @@ public class PwdBoxActivity extends Activity {
 
     private void showTokenInfo() {
         Intent intent = new Intent(PwdBoxActivity.this,TabActivity.class);
-        intent.putExtra("baidu", baidu);
+        //intent.putExtra("baidu", baidu);
         startActivity(intent);
-}
+    }
 
+    private void logInSuccess() {
+        // 登陆成功
+        //SessionId = OpenAPI.getSessionId();
+        //UserId = OpenAPI.getUserId();
+        //DeviceId = OpenAPI.getDeviceId();
+        Message msg = new Message();
+        msg.what = PwdBoxActivity.EVENT_LOGIN_DONE;
+        PwdBoxActivity.eventHandler.removeMessages(PwdBoxActivity.EVENT_LOGIN_DONE);
+        PwdBoxActivity.eventHandler.sendMessage(msg);
+    }
+    
 	public void doCallBack() {
-        if (OpenAPI.getStatus() == 0) {
+        //if (OpenAPI.getStatus() == 0) {
            
             // 登陆成功
-            SessionId = OpenAPI.getSessionId();
-            UserId = OpenAPI.getUserId();
-            DeviceId = OpenAPI.getDeviceId();
-            Message msg = new Message();
-            msg.what = PwdBoxActivity.EVENT_LOGIN_DONE;
-            PwdBoxActivity.eventHandler.removeMessages(PwdBoxActivity.EVENT_LOGIN_DONE);
-            PwdBoxActivity.eventHandler.sendMessage(msg);
-        }else{
-        	if(OpenAPI.getStatus() == -10801017 || OpenAPI.getStatus() == -10801304){
-        	}else if(OpenAPI.getStatus() != -10801001){
-                startSndaLogin();
-        	}
-        }
+		    logInSuccess();
+        //}else{
+        //	if(OpenAPI.getStatus() == -10801017 || OpenAPI.getStatus() == -10801304){
+        //	}else if(OpenAPI.getStatus() != -10801001){
+        //        startSndaLogin();
+        //	}
+        //}
 		
 	}
 
@@ -135,41 +134,38 @@ public class PwdBoxActivity extends Activity {
                 break;
     		case R.id.btnFastLogin:
                 Log.i(TAG, " btnFastLogin is onclick!");
-    	        baidu = new Baidu(clientId, clientSecret, PwdBoxActivity.this);
+    	        //baidu = new Baidu(clientId, clientSecret, PwdBoxActivity.this);
                 Log.i(TAG, " btnFastLogin new baidu!");
                 Log.i(TAG, " btnFastLogin baidu logout done!");
-    	        baidu.authorize(PwdBoxActivity.this, new BaiduDialogListener() {
+    	        //baidu.authorize(PwdBoxActivity.this, new BaiduDialogListener() {
 
-    	            @Override
-    	            public void onComplete(Bundle values) {
-    	                showTokenInfo();
-    	            }
+    	        //    @Override
+    	        //    public void onComplete(Bundle values) {
+    	        //        showTokenInfo();
+    	        //    }
 
-    	            @Override
-    	            public void onBaiduException(BaiduException e) {
+    	        //    @Override
+    	        //    public void onBaiduException(BaiduException e) {
 
-    	            }
+    	        //    }
 
-    	            @Override
-    	            public void onError(BaiduDialogError e) {
+    	        //    @Override
+    	        //    public void onError(BaiduDialogError e) {
 
-    	            }
+    	        //    }
 
-    	            @Override
-    	            public void onCancel() {
+    	        //    @Override
+    	        //    public void onCancel() {
 
-    	            }
-    	        });
+    	        //    }
+    	        //});
                 Log.i(TAG, " btnFastLogin baidu.authorize done!");
 
     			if(skip_auth){
-                    //Message msg = new Message();
-                    //msg.what = PwdBoxActivity.EVENT_LOGIN_DONE;
-                    //PwdBoxActivity.eventHandler.removeMessages(PwdBoxActivity.EVENT_LOGIN_DONE);
-                    //PwdBoxActivity.eventHandler.sendMessage(msg);
+    			    logInSuccess();
     			} else {
                     // 初始化无线OA
-        	        OpenAPI.init(PwdBoxActivity.this, AppId, "channel_id", "product_id");
+        	        //OpenAPI.init(PwdBoxActivity.this, AppId, "channel_id", "product_id");
         	        Toast.makeText(PwdBoxActivity.this, "初始化无线OA", Toast.LENGTH_SHORT).show();
 
         	        try {

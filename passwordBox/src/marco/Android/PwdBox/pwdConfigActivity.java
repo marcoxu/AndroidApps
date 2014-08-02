@@ -1,24 +1,12 @@
 package marco.Android.PwdBox;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import marco.Android.PwdBox.PwdDisplayActivity.tabEnventHandler;
-
-import com.snda.woa.android.OpenAPI;
-
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -29,13 +17,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.ExpandableListView.OnGroupCollapseListener;
-import android.widget.ExpandableListView.OnGroupExpandListener;
 
 public class pwdConfigActivity extends Activity {
     private static final String TAG = "marco.Android.pwdConfigActivity";
@@ -117,7 +100,6 @@ public class pwdConfigActivity extends Activity {
         mySpinner.setAdapter(adapter);     
         //第五步：为下拉列表设置各种事件的响应，这个事响应菜单被选中     
         mySpinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener(){     
-            @SuppressWarnings("unchecked")  
             public void onItemSelected(AdapterView arg0, View arg1, int arg2, long arg3) {     
                 // TODO Auto-generated method stub     
                 /* 将所选mySpinner 的值带入myTextView 中*/    
@@ -146,7 +128,6 @@ public class pwdConfigActivity extends Activity {
                 /* 将mySpinner 显示*/    
                 //arg0.setVisibility(View.VISIBLE);     
             }     
-            @SuppressWarnings("unchecked")  
             public void onNothingSelected(AdapterView arg0) {     
                 // TODO Auto-generated method stub     
             	//myTextCategory.setText("");     
@@ -179,11 +160,9 @@ public class pwdConfigActivity extends Activity {
         encrymod_Spinner.setAdapter(encymod_adapter);     
         //第五步：为下拉列表设置各种事件的响应，这个事响应菜单被选中     
         encrymod_Spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener(){     
-            @SuppressWarnings("unchecked")  
             public void onItemSelected(AdapterView arg0, View arg1, int arg2, long arg3) {     
                 // TODO Auto-generated method stub     
             }     
-            @SuppressWarnings("unchecked")  
             public void onNothingSelected(AdapterView arg0) {     
                 // TODO Auto-generated method stub     
                 //arg0.setVisibility(View.VISIBLE);     
@@ -215,11 +194,9 @@ public class pwdConfigActivity extends Activity {
         dispmod_Spinner.setAdapter(dispmod_adapter);     
         //第五步：为下拉列表设置各种事件的响应，这个事响应菜单被选中     
         dispmod_Spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener(){     
-            @SuppressWarnings("unchecked")  
             public void onItemSelected(AdapterView arg0, View arg1, int arg2, long arg3) {     
                 // TODO Auto-generated method stub     
             }     
-            @SuppressWarnings("unchecked")  
             public void onNothingSelected(AdapterView arg0) {     
                 // TODO Auto-generated method stub     
                 //arg0.setVisibility(View.VISIBLE);     

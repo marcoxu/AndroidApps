@@ -2,29 +2,21 @@ package marco.Android.PwdBox;
 
 import java.util.HashMap;
 
-import marco.Android.PwdBox.PwdBoxActivity.loginEnventHandler;
-
-import com.snda.woa.android.OpenAPI;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
-import android.view.View.OnLongClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
@@ -33,6 +25,7 @@ import android.widget.ExpandableListView.OnGroupCollapseListener;
 import android.widget.ExpandableListView.OnGroupExpandListener;
 import android.widget.Toast;
 
+@SuppressLint("HandlerLeak")
 public class PwdDisplayActivity extends Activity{
     private static final String TAG = "marco.Android.PwdDisplay";
     ExpandableListView expandablelistview; 
