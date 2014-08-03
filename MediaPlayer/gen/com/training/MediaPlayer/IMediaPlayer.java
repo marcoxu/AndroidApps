@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\My_Data\\Work\\AOL\\Learning\\Demos\\Teleca_training\\MediaPlayer\\MediaPlayer\\src\\com\\training\\MediaPlayer\\IMediaPlayer.aidl
+ * Original file: C:\\Disk_Backup\\E\\github\\AndroidApps\\MediaPlayer\\src\\com\\training\\MediaPlayer\\IMediaPlayer.aidl
  */
 package com.training.MediaPlayer;
 /**

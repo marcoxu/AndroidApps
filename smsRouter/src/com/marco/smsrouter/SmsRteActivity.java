@@ -10,6 +10,7 @@ import com.marco.smsrouter.preference.SmsServiceTogglePreference;
 import com.marco.smsrouter.service.smsRteService;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
@@ -18,10 +19,11 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.ActivityManager.RunningServiceInfo;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.util.Log;
@@ -30,9 +32,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 public class SmsRteActivity extends PreferenceActivity implements OnTouchListener {
 	private static final String TAG                  = "smsRouter.SmsRteActivity";
@@ -51,6 +51,34 @@ public class SmsRteActivity extends PreferenceActivity implements OnTouchListene
 	public static ArrayList<HashMap<String, Object>> mRteHistory = new ArrayList<HashMap<String, Object>>();
 	private static dataAccessor mAccessor            = null;
 	private PreferenceScreen mFlowControl            = null;
+	private smsRteService myService                  = null;
+
+    ServiceConnection mServiceConnection = new ServiceConnection() {
+        public void onServiceDisconnected(ComponentName name) {
+           Log.d(TAG,"onServiceDisconnected");
+       }
+       public void onServiceConnected(ComponentName name, IBinder service) {
+           // TODO Auto-generated method stub
+           Log.d(TAG,"onServiceConnected");
+           myService = ((smsRteService.smsRteBinder)service).getService();
+       }
+    };  
+
+	private void startsmsRteService(int callNO) {
+ 	    // 如果service未启动，则启动它
+ 	    if(callNO > 0 && !isServiceStarted(this) ){
+ 	   		Log.i(TAG, "Start smsRteService");
+ 	       	Intent i = new Intent(Intent.ACTION_RUN);
+ 	        i.setClass(this.getApplicationContext(), smsRteService.class);
+ 	        this.getApplicationContext().startService(i); 
+ 	    }
+	}
+	
+	private void bindSmsRteService() {
+   		Log.i(TAG, "Bind smsRteService");
+   	    Intent intent=new Intent(this.getApplicationContext(), smsRteService.class);
+   	    this.getApplicationContext().bindService(intent, mServiceConnection, BIND_AUTO_CREATE);   
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -124,38 +152,35 @@ public class SmsRteActivity extends PreferenceActivity implements OnTouchListene
  	      mToggleServPreference.setImageButtonOff();
  	  }
 
-	    Log.i(TAG, "Try start service");
- 	    // 如果service未启动，则启动它
- 	    if(callNoSize > 0 && !isServiceStarted(this) ){
- 	   		Log.i(TAG, "Start smsRteService");
- 	       	Intent i = new Intent(Intent.ACTION_RUN);
- 	        i.setClass(this.getApplicationContext(), smsRteService.class);
- 	        this.getApplicationContext().startService(i); 
- 	    }	
- 	    
-        //Try and find app version number
-        String version;
-        PackageManager pm = this.getPackageManager();
-        try {
-          //Get version number, not sure if there is a better way to do this
-          version = " v" +
-          pm.getPackageInfo(
-        		  SmsRteActivity.class.getPackage().getName(), 0).versionName;
-        } catch (NameNotFoundException e) {
-          version = "";
-        }
+	  Log.i(TAG, "Try start service");
+	  startsmsRteService(callNoSize);
+	  
+	  // Bind Service
+	  //bindSmsRteService();
+	    
+      //Try and find app version number
+      String version;
+      PackageManager pm = this.getPackageManager();
+      try {
+        //Get version number, not sure if there is a better way to do this
+        version = " v" +
+        pm.getPackageInfo(
+      		  SmsRteActivity.class.getPackage().getName(), 0).versionName;
+      } catch (NameNotFoundException e) {
+        version = "";
+      }
 
-        Log.i(TAG, "set aboutPref");
-        mDialogPreference =
-      	      (DialogPreference) getPreferenceScreen().findPreference("smsForwarder");
- 		
-        if(mDialogPreference != null)
- 			Log.i(TAG, "aboutPref ok");
- 		else
- 	        Log.i(TAG, "aboutPref is null");
-        mDialogPreference.setDialogType(DIALOG_ABOUT);
-        mDialogPreference.setDialogTitle(getString(R.string.app_name) +version);
-        mDialogPreference.setDialogLayoutResource(R.layout.about);
+      Log.i(TAG, "set aboutPref");
+      mDialogPreference =
+    	      (DialogPreference) getPreferenceScreen().findPreference("smsForwarder");
+		
+      if(mDialogPreference != null)
+			Log.i(TAG, "aboutPref ok");
+		else
+	        Log.i(TAG, "aboutPref is null");
+      mDialogPreference.setDialogType(DIALOG_ABOUT);
+      mDialogPreference.setDialogTitle(getString(R.string.app_name) +version);
+      mDialogPreference.setDialogLayoutResource(R.layout.about);
 	}
 
 	private void initFlowConfigPreference() {
@@ -408,4 +433,9 @@ public class SmsRteActivity extends PreferenceActivity implements OnTouchListene
 	        Log.i(TAG,"handle message done");
 		}
 	}
+	
+	public void onDestroy() {
+        //unbindService(mServiceConnection);	
+        super.onDestroy();
+    }
 }

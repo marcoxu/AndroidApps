@@ -1,5 +1,7 @@
 package com.marco.smsrouter.service;
 
+import java.io.FileDescriptor;
+
 import com.marco.smsrouter.SmsRteActivity;
 
 import android.app.Service;
@@ -9,6 +11,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.RemoteException;
 import android.util.Log;
 
 // 启动服务用于监听短信
@@ -19,6 +24,13 @@ public class smsRteService extends Service {
 	private CommandReceiver cmdReceiver;
 	public static final int CMD_UPDATE_FLOW_CONTROL = 0;
 	public static final int CMD_UPDATE_RULE         = 1;
+	private smsRteBinder mBinder = new smsRteBinder();
+	
+	public class smsRteBinder extends Binder {
+		public smsRteService getService() {
+			return smsRteService.this;
+		}
+	}
 	
     //接收Activity传送过来的命令
     private class CommandReceiver extends BroadcastReceiver{
@@ -79,18 +91,12 @@ public class smsRteService extends Service {
 	
 	public IBinder onBind(Intent intent) {
 		Log.i(TAG, "smsRteService.onBind");
-		return null;
-	}
-	
-	public class LocalBinder extends Binder {
-		public smsRteService getService() {
-			return smsRteService.this;
-		}
+		return mBinder;
 	}
 	
 	public boolean onUnbind(Intent intent) {
 		Log.i(TAG, "smsRteService.onUnbind");
-		return false;
+		 return super.onUnbind(intent);
 	}
 	
 	public void onRebind(Intent intent) {
@@ -102,6 +108,12 @@ public class smsRteService extends Service {
 		if (listener != null) {  
 			listener.unregister(recevier);  
 		}
+		if(cmdReceiver != null) {
+			unregisterReceiver(cmdReceiver);
+		}
+	   	Intent i = new Intent(Intent.ACTION_RUN);
+	    i.setClass(this.getApplicationContext(), smsRteService.class);
+ 	    this.getApplicationContext().startService(i);
 		super.onDestroy();
 	}
 }
